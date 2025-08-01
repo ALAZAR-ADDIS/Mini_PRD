@@ -1,14 +1,23 @@
 package Domain
 
-import "go.mongodb.org/mongo-driver/bson/primitive"
+import (
+	"time"
+
+	"go.mongodb.org/mongo-driver/bson/primitive"
+)
 
 type User struct {
 	Id      primitive.ObjectID `bson:"_id`
 	Email    string
+	FirstName string
+	LastName string
 	Password string
 	Role     string
-	tokens   string
+	Tokens   string
 	UserProfile Profile
+	CreatedAt   time.Time         
+ 	UpdatedAt   time.Time          
+
 }
 
 type Profile struct {

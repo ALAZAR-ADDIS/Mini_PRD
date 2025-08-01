@@ -27,3 +27,12 @@ func ConnectDb(password string,userName string) *mongo.Database{
 	return Database
 
 }
+
+
+func Disconnect(db *mongo.Database){
+	err := db.Client().Disconnect(context.TODO())
+	if err != nil{
+		log.Fatal(err)
+	}
+	fmt.Println("Connection Closed")
+}

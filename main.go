@@ -11,9 +11,10 @@ import (
 func main() {
 
 	route := gin.Default()
-	db := Repository.ConnectDb("","")
+	db := Repository.ConnectDb("admin","admin")
 	
 	Router.InitRoute(db,route)
 
 	route.Run("localhost:8000")
+	// Repository.Disconnect(db)
 }
