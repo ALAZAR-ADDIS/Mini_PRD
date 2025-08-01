@@ -1,1 +1,6 @@
-*.env
+.env
+init_database.js
+setup.sh
+>>>>>>> 247a4c09084fb4108828e2a989775c0145d83895
+
+
