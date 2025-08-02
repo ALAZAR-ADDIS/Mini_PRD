@@ -1,15 +1,14 @@
 package Repository
+
 import (
 	"context"
 	"fmt"
-	"log"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	"log"
 )
 
-
-
-func ConnectDb(password string,userName string) *mongo.Database{
+func ConnectDb(password string, userName string) *mongo.Database {
 
 	clientOption := options.Client().ApplyURI("mongodb+srv://" + userName + ":" + password + "@cluster0.xolx70t.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 	client, err := mongo.Connect(context.TODO(), clientOption)
@@ -28,10 +27,9 @@ func ConnectDb(password string,userName string) *mongo.Database{
 
 }
 
-
-func Disconnect(db *mongo.Database){
+func Disconnect(db *mongo.Database) {
 	err := db.Client().Disconnect(context.TODO())
-	if err != nil{
+	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Println("Connection Closed")
