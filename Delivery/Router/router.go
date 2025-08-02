@@ -5,6 +5,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func InitRoute(db *mongo.Database,router *gin.Engine ) {
+func InitRoute(db *mongo.Database, router *gin.Engine) {
 	NewUserRoute(db, router)
 }
